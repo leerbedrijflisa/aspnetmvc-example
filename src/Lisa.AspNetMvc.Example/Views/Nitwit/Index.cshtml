@@ -14,6 +14,11 @@
     </p>
 
     <p>
+        @Html.LabelFor(m => m.FavoriteColor)
+        @Html.DropDownListFor(m => m.FavoriteColor, Model.Colors)
+    </p>
+
+    <p>
         <input type="submit" value="Opslaan">
     </p>
 </form>

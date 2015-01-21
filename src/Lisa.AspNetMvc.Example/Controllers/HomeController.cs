@@ -6,7 +6,7 @@ namespace Lisa.AspNetMvc.Example
     {
         public ActionResult Index()
         {
-            return View();
+            return View(new PersonViewModel());
         }
 
         [HttpPost]

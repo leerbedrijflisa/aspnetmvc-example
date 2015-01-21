@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace Lisa.AspNetMvc.Example
 {
@@ -10,5 +12,34 @@ namespace Lisa.AspNetMvc.Example
 
         [Required]
         public string LastName { get; set; }
+
+        public string FavoriteColor { get; set; }
+
+        public IEnumerable<SelectListItem> Colors
+        {
+            get
+            {
+                return new SelectListItem[]
+                {
+                    new SelectListItem
+                    {
+                        Text = "rood",
+                        Value = "red"
+                    },
+
+                    new SelectListItem
+                    {
+                        Text = "geel",
+                        Value = "yellow"
+                    },
+
+                    new SelectListItem
+                    {
+                        Text = "blauw",
+                        Value = "blue"
+                    }
+                };
+            }
+        }
     }
 }
