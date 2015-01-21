@@ -12,6 +12,11 @@ namespace Lisa.AspNetMvc.Example
         [HttpPost]
         public ActionResult Index(PersonViewModel viewModel)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(viewModel);
+            }
+
             var person = new Person();
             person.FirstName = viewModel.FirstName;
             person.LastName = viewModel.LastName;

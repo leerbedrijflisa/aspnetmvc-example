@@ -1,13 +1,16 @@
-﻿
+﻿@model PersonViewModel
+
 <form method="post">
+    @Html.ValidationSummary()
+
     <p>
-        <label>Voornaam:</label>
-        <input type="text" name="firstName">
+        @Html.LabelFor(m => m.FirstName)
+        @Html.TextBoxFor(m => m.FirstName)
     </p>
 
     <p>
         <label>Achternaam:</label>
-        <input type="text" name="lastName">
+        @Html.TextBoxFor(m => m.LastName)
     </p>
 
     <p>
